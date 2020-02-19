@@ -8,11 +8,20 @@ public class NotesMove : MonoBehaviour
     public Vector3 targetPos;
     Vector3 startPos;
     float time = 0f;
+    public string swipeMode;
     // Start is called before the first frame update
     void Start()
     {
         startPos = this.transform.position;
         transform.localScale = new Vector3(0f,0f,0f);
+        if(swipeMode == "right")
+        {
+            GetComponent<Renderer>().material.color = Color.red;
+        }
+        if(swipeMode == "left")
+        {
+            GetComponent<Renderer>().material.color = Color.yellow;
+        }
     }
 
     // Update is called once per frame
